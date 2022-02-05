@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/todo-app-curso-react.git/static/css/main.eab12da8.css",
+    "main.js": "/todo-app-curso-react.git/static/js/main.9491a04e.js",
+    "index.html": "/todo-app-curso-react.git/index.html",
+    "static/media/delete.svg": "/todo-app-curso-react.git/static/media/delete.7631dc69accfed761dee3bfc33749026.svg",
+    "static/media/check.svg": "/todo-app-curso-react.git/static/media/check.e9a948bba52a34123d2ed7aeda0ea495.svg",
+    "main.eab12da8.css.map": "/todo-app-curso-react.git/static/css/main.eab12da8.css.map",
+    "main.9491a04e.js.map": "/todo-app-curso-react.git/static/js/main.9491a04e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eab12da8.css",
+    "static/js/main.9491a04e.js"
+  ]
+}
