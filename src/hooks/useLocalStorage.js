@@ -45,4 +45,4 @@ const useLocalStorage = (itemName, initialValue) => {
   }
 }
 
-export default useLocalStorage;
+export { useLocalStorage };
