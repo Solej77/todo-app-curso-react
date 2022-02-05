@@ -1,20 +1,9 @@
 import React from 'react';
 import { AppUI } from './AppUI';
+import useLocalStorage from './../hooks/useLocalStorage'
 
 const App = () => {
-  const localStorageTodos = localStorage.getItem('TODOS_V1');
-  let parsedTodos;
-  
-  // Con esta sintaxis validamos si hay un null, undefined o string vacio
-  if (!localStorageTodos) {
-    localStorage.setItem("TODOS_V1", JSON.stringify([]));
-    parsedTodos = [];
-  } else {
-    parsedTodos = JSON.parse(localStorageTodos);
-  }
-
-
-  const [todos, setTodos] = React.useState(parsedTodos);
+  const [todos, saveTodos] = useLocalStorage('TODOS_V1', []);
   const [searchValue, setSearchValue] = React.useState('');
 
   const completedTodos = todos.filter(todo => !!todo.completed).length;
@@ -31,12 +20,6 @@ const App = () => {
     })
   }
 
-  const saveTodos = (newTodos) => {
-    const stringifiedTodos = JSON.stringify(newTodos);
-    localStorage.setItem('TODOS_V1', stringifiedTodos);
-    setTodos(newTodos);
-  };
-
   const completeTodos = (text) => {
     const todoIndex = todos.findIndex(todo => todo.text === text);
     const newTodos = [...todos]
@@ -48,7 +31,7 @@ const App = () => {
     const todoIndex = todos.findIndex(todo => todo.text === text);
     const newTodos = [...todos]
     newTodos.splice(todoIndex, 1);
-    setTodos(newTodos)
+    saveTodos(newTodos)
   };
 
   return (
